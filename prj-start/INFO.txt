@@ -1,10 +1,14 @@
 v1: -----
     - Head bar navegation (No routing)
-        --
+        -- Header.component.html
 
-    - Class model object
-        --
+    - Class model Recipe object
+        -- recipes/recipe.model.ts
+        -- recipes/recipe-list.component.ts
+
     - Btn dropdown (Not working)
-        --
+        -- recipes/recipe-detail.component.html
+
     - Class model ingredients SHORT-VERSION
-        --
+        -- shared/ingredients.model.ts
+        -- shopping-list.component.ts
