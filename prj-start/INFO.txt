@@ -1,5 +1,10 @@
 v1: -----
     - Head bar navegation (No routing)
+        --
+
     - Class model object
+        --
     - Btn dropdown (Not working)
+        --
     - Class model ingredients SHORT-VERSION
+        --
