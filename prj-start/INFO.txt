@@ -12,3 +12,12 @@ v1: -----
     - Class model ingredients SHORT-VERSION
         -- shared/ingredients.model.ts
         -- shopping-list.component.ts
+
+v2: -----
+    - <ng-template #nameTemplate>
+        <h1>Exemple</>
+      </ng-template>
+
+      <div *ngIf="condiction; else nameTemplate"></div>
+        
+
