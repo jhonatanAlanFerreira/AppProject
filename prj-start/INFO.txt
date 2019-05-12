@@ -20,4 +20,9 @@ v2: -----
 
       <div *ngIf="condiction; else nameTemplate"></div>
         
+v3: -----
+    -Geting clients clicks, checking if it was outside a component
 
+    -Multiple classes in ngClass="{'class1 class2': condiction}" 
+    --multiple condiction is also possible! 
+    --ngClass="{stringVar: condiction}" possible too!
