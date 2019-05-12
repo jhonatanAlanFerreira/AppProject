@@ -1,32 +1,38 @@
-<div class="row">
-  <div class="col-xs-12">
-    <img src="" alt="" class="img-responsive">
+<div *ngIf="recipe; else noSelected">
+  <div class="row">
+    <div class="col-xs-12">
+      <img src="{{ recipe.imagePath }}" alt="" class="img-responsive">
+    </div>
   </div>
-</div>
-<div class="row">
-  <div class="col-xs-12">
-    <h2>Recipe Name</h2>
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>{{ recipe.name }}</h2>
+    </div>
   </div>
-</div>
-<div class="row">
-  <div class="col-xs-12">
-    <div class="btn-group">
-      <button class="btn btn-primary dropdown-toggle">Manage Recipes <span class="caret"></span></button>
-      <ul class="dropdown-menu">
-        <li><a href="#">Add ingredients to shopping-list</a></li>
-        <li><a href="#">Add Recipe</a></li>
-        <li><a href="#">Delete Recipe</a></li>
-      </ul>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="btn-group">
+        <button class="btn btn-primary dropdown-toggle">Manage Recipes <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Add ingredients to shopping-list</a></li>
+          <li><a href="#">Add Recipe</a></li>
+          <li><a href="#">Delete Recipe</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <p>{{ recipe.description }}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      Ingredients
     </div>
   </div>
 </div>
-<div class="row">
-  <div class="col-xs-12">
-    Description
-  </div>
-</div>
-<div class="row">
-  <div class="col-xs-12">
-    Ingredients
-  </div>
-</div>
+
+<ng-template #noSelected>
+  <h2 style="opacity:0.5;">Please select a recipe...</h2>
+</ng-template>
