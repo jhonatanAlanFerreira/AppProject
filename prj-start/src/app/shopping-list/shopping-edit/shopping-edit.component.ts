@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
-import { isDefaultChangeDetectionStrategy } from '@angular/core/src/change_detection/constants';
 import { Ingredient } from 'src/app/shared/ingredient.model';
 
 @Component({
@@ -11,7 +10,11 @@ export class ShoppingEditComponent implements OnInit {
 
   @ViewChild('nameInput') name: ElementRef;
   @ViewChild('amountInput') amount: ElementRef;
+  @ViewChild('toDeletRecipe') toDeletRecipe: ElementRef;
+
   @Output() newIngredient = new EventEmitter<Ingredient>();
+  @Output() clear = new EventEmitter<void>();
+  @Output() toDelet = new EventEmitter<ElementRef>();
 
   constructor() { }
 
@@ -20,6 +23,10 @@ export class ShoppingEditComponent implements OnInit {
 
   addIngredient(){
     this.newIngredient.emit(new Ingredient(this.name.nativeElement.value, this.amount.nativeElement.value));
+  }
+
+  toDeletFunction(){
+    this.toDelet.emit(this.toDeletRecipe);
   }
 
 }
