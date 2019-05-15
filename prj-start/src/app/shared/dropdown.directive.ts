@@ -3,6 +3,7 @@ import { Directive, ElementRef, Renderer2, HostListener, OnInit, Input } from '@
 @Directive({
   selector: '[appDropdown]'
 })
+
 export class DropdownDirective implements OnInit {
   open = false;
   @Input('appDropdown') name:string;
