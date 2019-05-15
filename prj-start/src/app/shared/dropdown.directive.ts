@@ -1,15 +1,21 @@
-import { Directive, ElementRef, Renderer2, HostListener, OnInit } from '@angular/core';
+import { Directive, ElementRef, Renderer2, HostListener, OnInit, Input } from '@angular/core';
 
 @Directive({
   selector: '[appDropdown]'
 })
 export class DropdownDirective implements OnInit {
   open = false;
+  @Input('appDropdown') name:string;
 
   constructor(private renderer:Renderer2, private element:ElementRef) { }
 
   ngOnInit(){
-    this.renderer.addClass(this.element.nativeElement,"btn-group");
+    
+    this.element.nativeElement.innerHTML = 
+    '<button class="btn btn-primary dropdown-toggle">'+this.name+'<span class="caret"></span></button><ul class="dropdown-menu">'
+    +this.element.nativeElement.innerHTML+'</ul>';
+
+    this.renderer.addClass(this.element.nativeElement,"btn-group.open");
   }
 
   @HostListener('click') clicked(){
