@@ -11,10 +11,11 @@ export class DropdownDirective implements OnInit {
   constructor(private renderer:Renderer2, private element:ElementRef) { }
 
   ngOnInit(){
-    
-    this.element.nativeElement.innerHTML = 
+
+    this.renderer.setProperty(this.element.nativeElement,'innerHTML',
     '<button class="btn btn-primary dropdown-toggle">'+this.name+'<span class="caret"></span></button><ul class="dropdown-menu">'
-    +this.element.nativeElement.innerHTML+'</ul>';
+    +this.element.nativeElement.innerHTML+'</ul>'
+    );
 
     this.renderer.addClass(this.element.nativeElement,"btn-group.open");
   }
