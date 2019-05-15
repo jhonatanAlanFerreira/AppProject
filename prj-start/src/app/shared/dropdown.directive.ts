@@ -13,7 +13,7 @@ export class DropdownDirective implements OnInit {
   ngOnInit(){
 
     this.renderer.setProperty(this.element.nativeElement,'innerHTML',
-    '<button class="btn btn-primary dropdown-toggle">'+this.name+'<span class="caret"></span></button><ul class="dropdown-menu">'
+    '<button class="btn btn-primary dropdown-toggle">'+this.name+' <span class="caret"></span></button><ul class="dropdown-menu">'
     +this.element.nativeElement.innerHTML+'</ul>'
     );
 
@@ -21,7 +21,7 @@ export class DropdownDirective implements OnInit {
   }
 
   @HostListener('document:click', ['$event'])
-  clickout(event) {
+  click(event) {
     if(!this.element.nativeElement.contains(event.target)){
       this.open = false;
       this.renderer.removeClass(this.element.nativeElement,"open");
