@@ -18,17 +18,15 @@ export class DropdownDirective implements OnInit {
     this.renderer.addClass(this.element.nativeElement,"btn-group.open");
   }
 
-  @HostListener('click') clicked(){
-    this.open = !this.open;
-    let element = this.element.nativeElement;
-    this.open? this.renderer.addClass(element,"open"): this.renderer.removeClass(element,"open");
-  }
-
   @HostListener('document:click', ['$event'])
   clickout(event) {
     if(!this.element.nativeElement.contains(event.target)){
       this.open = false;
       this.renderer.removeClass(this.element.nativeElement,"open");
+    }else{
+      this.open = !this.open;
+      let element = this.element.nativeElement;
+      this.open? this.renderer.addClass(element,"open"): this.renderer.removeClass(element,"open");
     } ;
   }
 }
