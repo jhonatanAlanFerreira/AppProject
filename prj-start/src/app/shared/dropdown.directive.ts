@@ -17,7 +17,7 @@ export class DropdownDirective implements OnInit {
     +this.element.nativeElement.innerHTML+'</ul>'
     );
 
-    this.renderer.addClass(this.element.nativeElement,"btn-group.open");
+    this.renderer.addClass(this.element.nativeElement,"btn-group");
   }
 
   @HostListener('document:click', ['$event'])
