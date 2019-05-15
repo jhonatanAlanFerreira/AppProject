@@ -19,6 +19,12 @@ v2: -----
       </ng-template>
 
       <div *ngIf="condiction; else nameTemplate"></div>
+      --------------------------------------------------------
+
+      directive dropdown
+        shared/dropdown.directive.ts
+        click outside added
+        ----------------------------------------------
         
 v3: -----
     -Geting clients clicks, checking if it was outside a component
