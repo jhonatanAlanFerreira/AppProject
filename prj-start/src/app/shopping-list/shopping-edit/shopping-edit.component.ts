@@ -15,7 +15,7 @@ export class ShoppingEditComponent implements OnInit {
   }
 
   addIngredient(name:string, amount: number){
-    this.service.newIngredient.emit(new Ingredient(name,amount));
+    this.service.ingredients.push(new Ingredient(name,amount));
   }
 
 }

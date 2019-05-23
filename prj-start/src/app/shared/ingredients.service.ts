@@ -5,7 +5,14 @@ import { Ingredient } from './ingredient.model';
   providedIn: 'root'
 })
 export class IngredientsService {
-  @Output() newIngredient = new EventEmitter<Ingredient>();
+  ingredients:Ingredient[] = [
+  new Ingredient('Apples',5),
+  new Ingredient('Tomatoes',10)
+]
+
+get ingredientsList(){
+  return this.ingredients;
+}
 
   constructor() { }
 }
